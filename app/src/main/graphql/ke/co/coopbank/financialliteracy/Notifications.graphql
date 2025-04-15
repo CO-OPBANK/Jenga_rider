@@ -1,0 +1,7 @@
+query Notifications {
+    notifications {
+        title
+        content,
+        created_at,
+    }
+}

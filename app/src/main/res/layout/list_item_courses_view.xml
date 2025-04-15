@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="course"
+            type="ke.co.coopbank.financialliteracy.model.Course" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:alpha="0.7"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{course.banner}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/avenir_medium"
+                android:text="@string/course_duration"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:drawableStartCompat="@drawable/ic_baseline_add_circle_24"
+                app:layout_constraintLeft_toRightOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Course Duration:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="@{course.duration}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/descriptionTextView"
+                app:layout_constraintLeft_toRightOf="@id/descriptionTextView"
+                app:layout_constraintTop_toTopOf="@id/descriptionTextView"
+                tools:text="10 minutes" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/avenir_heavy"
+                android:maxLines="2"
+                android:text="@{course.title}"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/guidelineStart"
+                app:layout_constraintRight_toLeftOf="@id/guidelineMiddle"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView"
+                tools:text="Equity and Debt Financing" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:fontFamily="@font/avenir_regular"
+                android:padding="2dp"
+                android:text="@{course.progress == 100 ? `Completed` : `Ongoing`}"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color"
+                android:textSize="13sp"
+                android:visibility="@{course.progress > 0 ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/guidelineStart"
+                tools:text="Ongoing" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:background="#b4ec4d"
+                app:layout_constraintLeft_toLeftOf="@id/titleTextView"
+                app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

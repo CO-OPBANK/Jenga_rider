@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="illustration_titles">
+        <item>Loans &amp; Services</item>
+        <item>Networks</item>
+        <item>Certification</item>
+    </string-array>
+
+    <string-array name="illustration_descriptions">
+        <item>Access to Bank Services such as Savings Accounts and Loans.</item>
+        <item>Access to Business Networks for Growth.</item>
+        <item>Issue of Certificate after Completion of Program/Training.</item>
+    </string-array>
+
+</resources>

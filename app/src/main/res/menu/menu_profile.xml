@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ke.co.coopbank.financialliteracy.ui.activity.main.MainActivity">
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_logout_circle_line"
+        android:iconTint="#FF3D3D"
+        android:title="@string/log_out"
+        app:showAsAction="withText|always"
+        tools:targetApi="o" />
+</menu>

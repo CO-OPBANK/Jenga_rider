@@ -1,0 +1,13 @@
+query Quizzes($courseId:ID!) {
+    quizzes(where: {id:$courseId}) {
+        id
+        Title
+        questions{
+            id
+            title
+            type
+            answer
+            correct_answer
+        }
+    }
+}

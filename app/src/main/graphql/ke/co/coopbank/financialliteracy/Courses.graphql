@@ -1,0 +1,14 @@
+query Courses {
+    courses {
+        id
+        title
+        duration
+        banner{
+            name
+            url
+        }
+        quiz{
+            id
+        }
+    }
+}

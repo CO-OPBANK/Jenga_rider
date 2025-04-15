@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jenga Rider</string>
+    <string name="action_search">Search</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="cooperative_bank">Cooperative Bank</string>
+    <string name="from">From</string>
+    <string name="title_activity_onboarding">Onboarding</string>
+    <string name="skip">Skip</string>
+    <string name="title_activity_register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_whatsapp_phone_number">Enter Whatsapp phone number</string>
+    <string name="create_account">Create Account</string>
+    <string name="financial_literacy_app">Jenga Rider App</string>
+    <string name="welcome_to_the_co_operative_bank">Welcome to the Co-operative Bank</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="verify">Verify</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_course">CourseActivity</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="wrong_number">Wrong Number?</string>
+    <string name="enter_code_below">Enter Code below</string>
+    <string name="id_number">ID Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="saccos">Saccos</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="log_out">Log Out</string>
+    <string name="about">About</string>
+    <string name="invite"><![CDATA[Invite Friends & Earn]]></string>
+    <string name="hello">Hello</string>
+    <string name="ongoing_courses">Ongoing courses</string>
+    <string name="upcoming_courses">Upcoming courses</string>
+    <string name="which_course_would_you_like_to_take_today">Which course would you like to take today?</string>
+    <string name="take_quiz">Take Quiz</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_edit_profile">Edit Profile</string>
+    <string name="personal_info">Personal Info</string>
+    <string name="title_activity_notification">Notifications</string>
+    <string name="title_activity_about">About</string>
+    <string name="about_description">
+        Co-operative Bank Foundation is a registered trust established in 2007 in recognition of
+        the need to enhance existing corporate social investments by the Co-operative bank of
+        Kenya.We promote long term economic prosperity and quality of life based on the belief that,
+        <b>if our people prosper, we prosper</b>
+    </string>
+    <string name="mission">To invest in local communities through responsible corporate citizenship for improved quality of life</string>
+    <string name="vision">To evolve into a global leader in sustainable social investments.</string>
+    <string name="agriculture">1. <b>AGRICULTURE:</b> We support small scale farmers through organized groups to facilitate income</string>
+    <string name="education">2. <b>EDUCATION:</b> We provide scholarships to bright but needy students thereby enhancing access to quality education</string>
+    <string name="environment">3. <b>ENVIRONMENT:</b> We promote best practices in environmental protection especially in rural areas</string>
+    <string name="health">4. <b>HEALTH:</b> We facilitate access and support and delivery of health services among the poor</string>
+    <string name="empowerment">5. <b>YOUTH AND WOMEN EMPOWERMENT:</b> We build capacity and ensure financial inclusion for groups and organizations</string>
+    <string name="sponsors">Sponsors</string>
+    <string name="full_name">Full name</string>
+    <string name="gender">Gender</string>
+    <string name="county">County</string>
+    <string name="group_sacco">Group/Sacco</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="pending_courses">Pending Courses</string>
+    <string name="sacco">Sacco</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="course_duration">Course Duration:</string>
+    <string name="proceed">Continue</string>
+</resources>

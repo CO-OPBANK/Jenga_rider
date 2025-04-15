@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ke.co.coopbank.financialliteracy">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name=".FinancialLiteracyApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FinancialLiteracy"
+        tools:ignore="UnusedAttribute">
+        <activity
+            android:name=".ui.activity.course.MarkQuizActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.AboutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.notification.NotificationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_notification"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.profile.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.profile.EditProfileActivity"
+            android:exported="false"
+            android:label="@string/title_activity_edit_profile"
+            android:parentActivityName=".ui.activity.profile.ProfileActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.profile.ProfileActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.course.QuizActivity"
+            android:exported="false"
+            android:label="@string/title_activity_course"
+            android:parentActivityName=".ui.activity.course.CourseActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.course.CourseActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.course.CompleteCourseActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar" />
+        <activity
+            android:name=".ui.activity.course.CourseActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_course"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.auth.AuthActivity"
+            android:exported="false"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar" />
+        <activity
+            android:name=".ui.activity.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.FinancialLiteracy.SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.onboarding.OnBoardingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_onboarding"
+            android:theme="@style/Theme.FinancialLiteracy.NoActionBar" />
+    </application>
+
+</manifest>

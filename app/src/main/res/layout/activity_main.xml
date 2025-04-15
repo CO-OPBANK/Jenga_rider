@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="complete"
+            type="Boolean" />
+
+        <variable
+            name="percentageProgress"
+            type="Integer" />
+
+        <variable
+            name="user"
+            type="ke.co.coopbank.financialliteracy.model.User" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.activity.main.MainActivity"
+        tools:openDrawer="start">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.FinancialLiteracy.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/white"
+                    android:theme="@style/AppTheme.ActionBar"
+                    app:popupTheme="@style/Theme.FinancialLiteracy.PopupOverlay"
+                    app:title="@string/app_name"
+                    app:titleTextColor="#333333">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@string/app_name"
+                            android:textColor="#333333"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/rectangle_bg"
+                            android:drawablePadding="5dp"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="5dp"
+                            android:text="@{percentageProgress+`%`}"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:drawableTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:progressIcon="@{complete}" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="16dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="16dp" />
+
+                    <TextView
+                        android:id="@+id/greetingTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="@{`Hey `+user.name.trim()+`!`}"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/courseTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/avenir_medium"
+                        android:text="@string/which_course_would_you_like_to_take_today"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/greetingTv" />
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#D8D8D8"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/courseTv" />
+
+                    <TextView
+                        android:id="@+id/ongoingTV"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="@string/ongoing_courses"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/divider"
+                        tools:visibility="visible" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ongoingRecyclerView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/ongoingTV"
+                        tools:listitem="@layout/list_item_course_ongoing_view"
+                        tools:visibility="visible" />
+
+                    <me.relex.circleindicator.CircleIndicator2
+                        android:id="@+id/indicator"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:visibility="gone"
+                        app:ci_drawable="@drawable/dot_selected"
+                        app:ci_drawable_unselected="@drawable/dot_unselected"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/ongoingRecyclerView"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/upcomingTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="@string/upcoming_courses"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/indicator" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/upcomingRecyclerView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/upcomingTextView"
+                        tools:listitem="@layout/list_item_courses_view" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:itemTextAppearance="@style/AvenirTextViewStyle"
+            app:menu="@menu/activity_main_drawer"
+            tools:visibility="gone" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>

@@ -1,0 +1,23 @@
+query Course($courseId:ID!) {
+    courses (where: {id:$courseId}) {
+        id
+        title
+        body
+        created_at
+        excerpt
+        duration
+        quiz{
+            id
+        }
+        banner{
+            name
+            url,
+            mime
+        }
+        media{
+            name
+            url
+            mime
+        }
+    }
+}

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="ke.co.coopbank.financialliteracy.model.User" />
+
+        <variable
+            name="sacco"
+            type="ke.co.coopbank.financialliteracy.model.Sacco" />
+
+        <variable
+            name="county"
+            type="ke.co.coopbank.financialliteracy.model.County" />
+
+        <variable
+            name="firstName"
+            type="String" />
+
+        <variable
+            name="lastName"
+            type="String" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.activity.profile.ProfileActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.FinancialLiteracy.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:theme="@style/AppTheme.ActionBar"
+                app:popupTheme="@style/Theme.FinancialLiteracy.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#f2f6f5"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            profilePhoto="@{user.profilePicture}"
+                            android:layout_width="100dp"
+                            android:layout_height="90dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@mipmap/ic_launcher"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/changePhotoImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:contentDescription="@string/app_name"
+                            android:focusable="true"
+                            android:padding="2dp"
+                            android:src="@drawable/ic_baseline_photo_camera_24"
+                            app:layout_constraintBottom_toBottomOf="@id/imageView"
+                            app:layout_constraintRight_toRightOf="@id/imageView" />
+
+                        <TextView
+                            android:id="@+id/firstNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/avenir_heavy"
+                            android:text="@{firstName}"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp"
+                            app:layout_constraintLeft_toRightOf="@+id/imageView"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Alex" />
+
+                        <TextView
+                            android:id="@+id/lastNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@{lastName}"
+                            android:textColor="#616161"
+                            android:textSize="20sp"
+                            android:visibility="@{lastName.empty?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/imageView"
+                            app:layout_constraintTop_toBottomOf="@id/firstNameTextView"
+                            tools:text="Karianjahi" />
+
+                        <TextView
+                            android:id="@+id/phoneTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:drawablePadding="3dp"
+                            android:fontFamily="@font/avenir_regular"
+                            android:text="@{user.phoneNumber}"
+                            android:textColor="#616161"
+                            android:textSize="18sp"
+                            app:drawableStartCompat="@drawable/ic_baseline_phone_24"
+                            app:layout_constraintLeft_toRightOf="@+id/imageView"
+                            app:layout_constraintTop_toBottomOf="@id/lastNameTextView"
+                            tools:text="071234567" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="@string/personal_info"
+                        android:textColor="#333333"
+                        android:textSize="18sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="#f2f6f5"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/genderLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@string/gender"
+                            android:textColor="#9B9B9B"
+                            android:textSize="14sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@{user.gender.equals(`M`)?`Male`:`Female`}"
+                            android:textColor="#616161"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/genderLabelTextView"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/genderLabelTextView"
+                            tools:text="Male" />
+
+                        <TextView
+                            android:id="@+id/dobLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@string/date_of_birth"
+                            android:textColor="#9B9B9B"
+                            android:textSize="14sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/genderLabelTextView" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@{user.dob}"
+                            android:textColor="#616161"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/dobLabelTextView"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/dobLabelTextView"
+                            tools:text="1111-11-11" />
+
+                        <TextView
+                            android:id="@+id/saccoLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@string/sacco"
+                            android:textColor="#9B9B9B"
+                            android:textSize="14sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/dobLabelTextView" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@{sacco.name??`NA`}"
+                            android:textColor="#616161"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/saccoLabelTextView"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/saccoLabelTextView"
+                            tools:text="Stima" />
+
+                        <TextView
+                            android:id="@+id/nationalLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@string/id_number"
+                            android:textColor="#9B9B9B"
+                            android:textSize="14sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/saccoLabelTextView" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@{user.idNumber}"
+                            android:textColor="#616161"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/nationalLabelTextView"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/nationalLabelTextView"
+                            tools:text="11111" />
+
+                        <TextView
+                            android:id="@+id/countyLabelTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@string/county"
+                            android:textColor="#9B9B9B"
+                            android:textSize="14sp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/nationalLabelTextView" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenir_medium"
+                            android:text="@{county.name??`NA`}"
+                            android:textColor="#616161"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="@id/countyLabelTextView"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/countyLabelTextView"
+                            tools:text="Nairobi" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/ongoingTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/avenir_heavy"
+                        android:text="@string/pending_courses"
+                        android:textColor="#333333"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ongoingDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/avenir_medium"
+                        android:text="This is a list of incomplete courses"
+                        android:textColor="#9B9B9B"
+                        android:textSize="14sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ongoingRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/ongoingTV"
+                        tools:listitem="@layout/list_item_course_ongoing_view"
+                        tools:visibility="visible" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnEditProfile"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="30dp"
+                app:cardBackgroundColor="#00543D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/buttonNext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/ic_baseline_edit_24"
+                        android:drawablePadding="8dp"
+                        android:fontFamily="@font/avenir_regular"
+                        android:gravity="center"
+                        android:text="@string/edit_profile"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,33 @@
+{
+  "status": 0,
+  "message": "OK. OTP verification successfull.",
+  "userExists": true,
+  "existingUserData": {
+    "id": 32,
+    "name": "Google Test User",
+    "gender": "M",
+    "dob": "1970-01-01",
+    "idNumber": "111111111",
+    "phoneNumber": "34253423",
+    "countyId": 7,
+    "saccoId": 50,
+    "createdAt": "2023-11-02T06:19:36.000Z",
+    "modifiedAt": "2023-11-02T06:19:36.000Z",
+    "profilePicture": null,
+    "countyName": "Garissa",
+    "saccoName": "Hazina Sacco",
+    "county": {
+      "id": 43,
+      "name": "Homa Bay",
+      "createdAt": "2021-06-07T15:22:53.000Z",
+      "modifiedAt": "2021-06-07T15:22:53.000Z"
+    },
+    "sacco": {
+      "id": 48,
+      "name": "Safaricom Sacco",
+      "createdAt": "2021-06-07T15:22:37.000Z",
+      "modifiedAt": "2021-06-07T15:22:37.000Z"
+    }
+  },
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjozMiwibmFtZSI6Ikdvb2dsZSBUZXN0IFVzZXIiLCJnZW5kZXIiOiJNIiwiZG9iIjoiMTk3MC0wMS0wMVQwMDowMDowMC4wMDBaIiwiaWROdW1iZXIiOiIxMTExMTExMTEiLCJjb3VudHlJZCI6Nywic2FjY29JZCI6NTAsInBob25lTnVtYmVyIjoiMzQyNTM0MjMiLCJtb2RpZmllZEF0IjoiMjAyMy0xMS0wMlQwNjoxOTozNi44MjFaIiwiY3JlYXRlZEF0IjoiMjAyMy0xMS0wMlQwNjoxOTozNi44MjFaIn0sImlhdCI6MTY5ODkwNTk3Nn0.Jh356wkKtM7JWNhOfHMvkj1ZeOTHRD1tvlrlnmXs8lA"
+}
